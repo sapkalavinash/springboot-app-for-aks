@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: my-ak-deployment2
+  name: my-ak-deployment
 spec:
   replicas: 1
   selector:
@@ -31,4 +31,4 @@ spec:
     - protocol: TCP
       port: 8085
       targetPort: 8085
-  type: ClusterIP
+  type: NodePort
