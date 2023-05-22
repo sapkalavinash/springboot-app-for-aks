@@ -32,3 +32,23 @@ spec:
       port: 8085
       targetPort: 8085
   type: NodePort
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: my-ak-ingress
+  annotations:
+    nginx.ingress.kubernetes.io/use-regex: "true"
+spec:
+  ingressClassName: nginx
+  rules:
+  - host:  
+    http:
+      paths:
+      - path: /angular
+        pathType: Prefix
+        backend:
+          service:
+            name: angular-app-svc
+            port:
+              number: 8085
