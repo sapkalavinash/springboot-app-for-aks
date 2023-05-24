@@ -45,7 +45,7 @@ spec:
   - host:  
     http:
       paths:
-      - path: /angular
+      - path: /test
         pathType: Prefix
         backend:
           service:
